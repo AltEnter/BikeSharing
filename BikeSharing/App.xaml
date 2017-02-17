@@ -101,6 +101,27 @@
                         Value="{StaticResource MontserratRegular}" />
             </Style>
 
+            <Style x:Key="ButtonStyle"
+                   TargetType="{x:Type Button}">
+                <Setter Property="FontFamily"
+                        Value="{StaticResource MontserratRegular}" />
+                <Setter Property="FontAttributes"
+                        Value="Bold" />
+                <Setter Property="TextColor"
+                        Value="{StaticResource BlueColor}" />
+                <Setter Property="BackgroundColor"
+                        Value="{StaticResource WhiteColor}" />
+            </Style>
+
+            <Style x:Key="SignInButtonStyle"
+                   TargetType="{x:Type Button}"
+                   BasedOn="{StaticResource ButtonStyle}">
+                <Setter Property="HeightRequest"
+                        Value="54" />
+                <Setter Property="FontSize"
+                        Value="{StaticResource LargeSize}" />
+            </Style>
+
         </ResourceDictionary>
     </Application.Resources>
 
