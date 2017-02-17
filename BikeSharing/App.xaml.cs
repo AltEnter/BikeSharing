@@ -15,8 +15,7 @@ namespace BikeSharing
 
             AdapColorsHexString();
 
-            var appViewModel = new AppViewModel();
-            MainPage = appViewModel.CreateMainPage();
+            MainPage = (new AppViewModel()).CreateMainPage();
         }
 
         private void AdapColorsHexString()

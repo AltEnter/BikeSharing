@@ -27,7 +27,7 @@
                         x:TypeArguments="x:String"
                         Android="Montserrat-Regular"
                         iOS="Montserrat-Regular.ttf#Montserrat"
-                        WinPhone="Assets/Fonts/MontSerrat-Regular.ttf#Montserrat"/>
+                        WinPhone="Assets/Fonts/MontSerrat-Regular.ttf#Montserrat" />
 
             <OnPlatform x:Key="MontserratBold"
                         x:TypeArguments="x:String"
@@ -40,9 +40,8 @@
                         iOS="SourceSansPro-Regular"
                         Android="SourceSansPro-Regular.ttf#Source Sans Pro"
                         WinPhone="Assets/Fonts/SourceSansPro-Regular.ttf#Source Sans Pro" />
-            
+
             <!--字体尺寸-->
-            <!-- Font Sizes -->
             <OnPlatform x:Key="LittleSize"
                         x:TypeArguments="x:Double"
                         iOS="11"
@@ -90,14 +89,18 @@
                         iOS="32"
                         Android="48"
                         WinPhone="48" />
-            
+
             <!--转换器-->
             <converters:BirthDataConvert x:Key="BirthDateConverter" />
             <converters:BoolToColorConverter x:Key="BoolToColorConverter" />
-            
+
             <!--样式-->
-            
-            
+            <Style x:Key="EntryStyle"
+                   TargetType="{x:Type Entry}">
+                <Setter Property="FontFamily"
+                        Value="{StaticResource MontserratRegular}" />
+            </Style>
+
         </ResourceDictionary>
     </Application.Resources>
 

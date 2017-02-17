@@ -1,8 +1,58 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <rxui:ReactiveContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                  xmlns:rxui="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
-                  xmlns:vms="clr-namespace:BikeSharing.ViewModels"
-                  x:Class="BikeSharing.Pages.LoginPage"
-                  x:TypeArguments="vms:LoginViewModel">
+                          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                          xmlns:rxui="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
+                          xmlns:vms="clr-namespace:BikeSharing.ViewModels"
+                          x:Class="BikeSharing.Pages.LoginPage"
+                          x:TypeArguments="vms:LoginViewModel">
+
+    <Grid>
+        <Grid.Padding>
+            <OnPlatform x:TypeArgument="Thickness"
+                        iOS="40,150,40,30"
+                        Android="40,150,40,30"
+                        WinPhone="40" />
+        </Grid.Padding>
+        <Grid.VerticalOptions>
+            <OnPlatform x:TypeArguments="LayoutOptions"
+                        Android="FillAndExpand"
+                        iOS="FillAndExpand"
+                        WinPhone="Center" />
+        </Grid.VerticalOptions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition.Height>
+                <OnPlatform x:TypeArguments="GridLength"
+                            iOS="40"
+                            Android="40"
+                            WinPhone="Auto" />
+            </RowDefinition.Height>
+        </Grid.RowDefinitions>
+        <StackLayout Grid.Row="0">
+            <StackLayout.Spacing>
+                <OnPlatform x:TypeArguments="x:Double"
+                            iOS="20"
+                            WinPhone="20" />
+            </StackLayout.Spacing>
+            <StackLayout.HorizontalOptions>
+                <OnPlatform x:TypeArguments="LayouOptions"
+                            iOS="FillAdnExpand"
+                            Android="FillAndExpand"
+                            WinPhone="Center" />
+            </StackLayout.HorizontalOptions>
+
+            <Entry x:Name="EntryUserName"
+                   Text="{Binding UserName.Value,Mode=TwoWay}"
+                   AutomationId="username"
+                   Placeholder="Username">
+                <Entry.Style>
+                    <OnPlatform x:TypeArguments="Style"
+                                iOS="{StaticResource EntryStyle}"
+                                Android="{StaticResource EntryStyle}"
+                                WinPhone="{StaticResource UwpEntryStyle}" />
+                </Entry.Style>
+            </Entry>
+        </StackLayout>
+    </Grid>
+
 </rxui:ReactiveContentPage>
