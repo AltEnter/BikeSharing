@@ -1,18 +1,27 @@
-﻿using BikeSharing.Application.Services.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System;
 using System.Threading.Tasks;
-using BikeSharing.Application.ViewModels;
+using BikeSharing.Services.Interfaces;
+using BikeSharing.ViewModels;
 
-namespace BikeSharing.Application.Services
+namespace BikeSharing.Services
 {
     public class NavigationService : INavigationService
     {
+        private readonly IAuthenticationService _authenticationService;
+
+        protected Xamarin.Forms.Application CurrentApplication => Xamarin.Forms.Application.Current;
+
+        public NavigationService(IAuthenticationService authencationService)
+        {
+            _authenticationService = authencationService;
+        }
+
         public Task InitializeAsync()
         {
-            throw new NotImplementedException();
+            if (_authenticationService.IsAuthenticated)
+                return NavigateToAsync<MainViewModel>();
+            else
+                return NavigateToAsync<LoginViewModel>();
         }
 
         public Task NavigateBackAsync()

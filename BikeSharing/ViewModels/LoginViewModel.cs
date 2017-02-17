@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BikeSharing.Application.ViewModels
+namespace BikeSharing.ViewModels
 {
-    public class ViewModel
+    public class LoginViewModel:ViewModel
     {
     }
 }

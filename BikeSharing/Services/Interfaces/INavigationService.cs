@@ -1,11 +1,11 @@
-﻿using BikeSharing.Application.ViewModels;
+﻿using BikeSharing.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BikeSharing.Application.Services.Interfaces
+namespace BikeSharing.Services.Interfaces
 {
     public interface INavigationService
     {
