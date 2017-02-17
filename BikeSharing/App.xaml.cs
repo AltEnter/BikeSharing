@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using BikeSharing.Utils;
+using BikeSharing.ViewModels;
 using Xamarin.Forms;
 
 namespace BikeSharing
@@ -14,21 +15,8 @@ namespace BikeSharing
 
             AdapColorsHexString();
 
-            if (Device.OS == TargetPlatform.Windows)
-                InitNavigation();
-        }
-
-        protected async override void OnStart()
-        {
-            base.OnStart();
-
-            if (Device.OS != TargetPlatform.Windows)
-                await InitNavigation();
-        }
-
-        private Task InitNavigation()
-        {
-            throw new NotImplementedException();
+            var appViewModel = new AppViewModel();
+            MainPage = appViewModel.CreateMainPage();
         }
 
         private void AdapColorsHexString()
