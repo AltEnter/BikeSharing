@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:BikeSharing.Converters"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="BikeSharing.App">
     <Application.Resources>
@@ -89,6 +90,13 @@
                         iOS="32"
                         Android="48"
                         WinPhone="48" />
+            
+            <!--转换器-->
+            <converters:BirthDataConvert x:Key="BirthDateConverter" />
+            <converters:BoolToColorConverter x:Key="BoolToColorConverter" />
+            
+            <!--样式-->
+            
             
         </ResourceDictionary>
     </Application.Resources>
