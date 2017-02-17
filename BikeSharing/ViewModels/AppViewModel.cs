@@ -32,8 +32,8 @@ namespace BikeSharing.ViewModels
 
         private void RegisterNavigablePages(IMutableDependencyResolver dependencyResolver)
         {
-            dependencyResolver.Register(() => new LoginPage(), typeof(LoginViewModel));
-            dependencyResolver.Register(() => new MainPage(), typeof(MainViewModel));
+            dependencyResolver.Register(() => new LoginPage(), typeof(IViewFor<LoginViewModel>));
+            dependencyResolver.Register(() => new MainPage(), typeof(IViewFor<MainViewModel>));
         }
 
         private void RegisterServices(IMutableDependencyResolver dependencyResolver)
