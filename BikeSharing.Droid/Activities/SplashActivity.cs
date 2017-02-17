@@ -14,12 +14,12 @@ using Android.Widget;
 namespace BikeSharing.Droid.Activities
 {
     [Activity(
-        Label             = "SplashActivity",
-        Icon              ="@drawable/icon",
-        Theme             ="@style/Theme.Splash",
-        MainLauncher      =true,
-        NoHistory         =true,
-        ScreenOrientation =Android.Content.PM.ScreenOrientation.Portrait
+        Label = "SplashActivity",
+        Icon = "@drawable/icon",
+        Theme = "@style/Theme.Splash",
+        MainLauncher = true,
+        NoHistory = true,
+        ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait
         )]
     public class SplashActivity : AppCompatActivity
     {
