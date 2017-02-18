@@ -23,7 +23,7 @@ namespace BikeSharing.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
-            CachedImageRender.Init();
+            CachedImageRenderer.Init();
             LoadApplication(new App());
         }
     }

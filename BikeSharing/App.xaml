@@ -165,7 +165,7 @@
 
             <Style x:Key="EventNameLableStyle"
                    TargetType="Label"
-                   BasedOn="{StaticResource MonterratRegularLabelStyle}">
+                   BasedOn="{StaticResource MontserratRegularLabelStyle}">
                 <Setter Property="TextColor"
                         Value="{StaticResource BlueColor}" />
                 <Setter Property="FontSize"
@@ -214,17 +214,21 @@
             </Style>
 
             <Style x:Key="OverlayStyle"
-                   TargetType="ffimageloadding:CachedImage">
-                
-            </Style>
-
-            <Style x:Key="SignInButtonStyle"
-                   TargetType="{x:Type Button}"
-                   BasedOn="{StaticResource ButtonStyle}">
-                <Setter Property="HeightRequest"
-                        Value="54" />
-                <Setter Property="FontSize"
-                        Value="{StaticResource LargeSize}" />
+                   TargetType="{x:Type ffimageloading:CachedImage}">
+                <Setter Property="Source">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="ImageSource"
+                                    Android="event_overlay"
+                                    iOS="event_overlay"
+                                    WinPhone="Assets/event_overlay.png" />
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="DownsampleToViewSize"
+                        Value="True" />
+                <Setter Property="Aspect"
+                        Value="AspectFill" />
+                <Setter Property="Opacity"
+                        Value="0.8" />
             </Style>
 
         </ResourceDictionary>
