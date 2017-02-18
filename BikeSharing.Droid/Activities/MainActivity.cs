@@ -3,6 +3,8 @@ using Android.Widget;
 using Android.OS;
 using Android.Content.PM;
 
+using FFImageLoading.Forms.Droid;
+
 namespace BikeSharing.Droid
 {
     [Activity(
@@ -21,6 +23,7 @@ namespace BikeSharing.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+            CachedImageRender.Init();
             LoadApplication(new App());
         }
     }

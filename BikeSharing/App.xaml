@@ -108,10 +108,97 @@
             <Style TargetType="{x:Type Label}"
                    BasedOn="{StaticResource BaseLabelStyle}" />
 
+            <Style x:Key="MontserratRegularLabelStyle"
+                   TargetType="{x:Type Label}"
+                   BasedOn="{StaticResource BaseLabelStyle}">
+                <Setter Property="FontFamily"
+                        Value="{StaticResource MontserratRegular}" />
+            </Style>
+
+            <Style x:Key="MontserratBoldLabelStyle"
+                   TargetType="{x:Type Label}"
+                   BasedOn="{StaticResource BaseLabelStyle}">
+                <Setter Property="FontFamily"
+                        Value="{StaticResource MontserratBold}" />
+            </Style>
+
+            <Style x:Key="SourceSansProRegularLabelStyle"
+                   TargetType="{x:Type Label}"
+                   BasedOn="{StaticResource BaseLabelStyle}">
+                <Setter Property="FontFamily"
+                        Value="{StaticResource SourceSansProRegular}" />
+            </Style>
+
             <Style x:Key="EntryStyle"
                    TargetType="{x:Type Entry}">
                 <Setter Property="FontFamily"
                         Value="{StaticResource MontserratRegular}" />
+                <Setter Property="TextColor"
+                        Value="{StaticResource WhiteColor}" />
+                <Setter Property="PlaceholderColor"
+                        Value="{StaticResource WhiteColor}" />
+                <Setter Property="FontSize"
+                        Value="{StaticResource LargeSize}" />
+                <Setter Property="HorizontalOptions"
+                        Value="FillAndExpand" />
+                <Setter Property="FontAttributes"
+                        Value="Bold" />
+                <Setter Property="Opacity"
+                        Value="0.6" />
+                <Setter Property="effects:LineColorEffect.ApplyLineColor"
+                        Value="True" />
+                <Setter Property="effects:LineColorEffect.LineColor"
+                        Value="{StaticResource WhiteColor}" />
+
+                <Style.Triggers>
+                    <Trigger TargetType="Entry"
+                             Property="IsFocused"
+                             Value="True">
+                        <Setter Property="Opacity"
+                                Value="1" />
+                        <Setter Property="effects:LineColorEffect.LineColor"
+                                Value="{StaticResource WhiteColor}" />
+                    </Trigger>
+                </Style.Triggers>
+
+            </Style>
+
+            <Style x:Key="EventNameLableStyle"
+                   TargetType="Label"
+                   BasedOn="{StaticResource MonterratRegularLabelStyle}">
+                <Setter Property="TextColor"
+                        Value="{StaticResource BlueColor}" />
+                <Setter Property="FontSize"
+                        Value="{StaticResource MidMediumSize}" />
+            </Style>
+
+            <Style x:Key="LocationAndDateLabelStyle"
+                   TargetType="{x:Type Label}"
+                   BasedOn="{StaticResource MontserratRegularLabelStyle}">
+                <Setter Property="TextColor"
+                        Value="{StaticResource GrayColor}" />
+                <Setter Property="FontSize"
+                        Value="{StaticResource LittleSize}" />
+                <Setter Property="Opacity"
+                        Value="0.4" />
+            </Style>
+
+            <Style x:Key="EventTypeLabelStyle"
+                   TargetType="{x:Type Label}"
+                   BasedOn="{StaticResource MontserratRegularLabelStyle}">
+                <Setter Property="TextColor"
+                        Value="{StaticResource GrayColor}" />
+                <Setter Property="FontSize"
+                        Value="{StaticResource LittleSize}" />
+            </Style>
+
+            <Style x:Key="HeaderLabelStyle"
+                   TargetType="{x:Type Label}"
+                   BasedOn="{StaticResource MontserratRegularLabelStyle}">
+                <Setter Property="TextColor"
+                        Value="{StaticResource WhiteColor}" />
+                <Setter Property="FontSize"
+                        Value="{StaticResource MidMediumSize}" />
             </Style>
 
             <Style x:Key="ButtonStyle"
@@ -124,6 +211,11 @@
                         Value="{StaticResource BlueColor}" />
                 <Setter Property="BackgroundColor"
                         Value="{StaticResource WhiteColor}" />
+            </Style>
+
+            <Style x:Key="OverlayStyle"
+                   TargetType="ffimageloadding:CachedImage">
+                
             </Style>
 
             <Style x:Key="SignInButtonStyle"
