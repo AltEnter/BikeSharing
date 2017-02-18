@@ -104,7 +104,10 @@
                 <Setter Property="effects:NumberOfLinesEffect.NumberOfLines"
                         Value="2" />
             </Style>
-            
+
+            <Style TargetType="{x:Type Label}"
+                   BasedOn="{StaticResource BaseLabelStyle}" />
+
             <Style x:Key="EntryStyle"
                    TargetType="{x:Type Entry}">
                 <Setter Property="FontFamily"
