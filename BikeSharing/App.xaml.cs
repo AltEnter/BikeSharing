@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
+using BikeSharing.Effects;
 using BikeSharing.Utils;
 using BikeSharing.ViewModels;
 using Xamarin.Forms;
@@ -9,6 +10,35 @@ namespace BikeSharing
 {
     public partial class App : Application
     {
+        #region 可绑定属性
+        public static readonly BindableProperty ApplyNumberOfLinesProperty =
+            BindableProperty.CreateAttached("ApplyNumberOfLines", typeof(bool), typeof(MaxLinesEffect), false, propertyChanged: OnApplyNumberOfLinesChanged);
+
+        private static void OnApplyNumberOfLinesChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var view = bindable as View;
+            if (view == null)
+                return;
+
+            if ((bool)newValue)
+            {
+                view.Effects.Add(new MaxLinesEffect());
+            }
+            else
+            {
+                Effect toRemove = view.Effects.FirstOrDefault(e => e is MaxLinesEffect);
+                if (toRemove != null)
+                    view.Effects.Remove(toRemove);
+            }
+        }
+
+        public bool ApplyNumberOfLines
+        {
+            get => (bool)GetValue(ApplyNumberOfLinesProperty);
+            set => SetValue(ApplyNumberOfLinesProperty, value);
+        }
+
+        #endregion
         public App()
         {
             InitializeComponent();

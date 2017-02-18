@@ -40,7 +40,7 @@
     </Compile>
     <Compile Include="Converters\BirthDataConvert.cs" />
     <Compile Include="Converters\BoolToColorConverter.cs" />
-    <Compile Include="Effects\NumberOfLinesEffect.cs" />
+    <Compile Include="Effects\MaxLinesEffect.cs" />
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
