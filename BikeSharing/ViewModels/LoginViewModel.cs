@@ -20,7 +20,6 @@ namespace BikeSharing.ViewModels
 
         public string UserNameError => _userNameError?.Value ?? null;
 
-
         private string _password;
 
         public string Password
