@@ -38,6 +38,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Behaviors\ValidateOnTextChangedBehavior.cs" />
     <Compile Include="Converters\BirthDataConvert.cs" />
     <Compile Include="Converters\BoolToColorConverter.cs" />
     <Compile Include="Effects\LineColorEffect.cs" />
@@ -120,8 +121,8 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Behaviors\" />
     <Folder Include="InputModels\" />
+    <Folder Include="Validators\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\MainPage.xaml">

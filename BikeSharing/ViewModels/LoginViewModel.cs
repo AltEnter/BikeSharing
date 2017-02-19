@@ -16,6 +16,11 @@ namespace BikeSharing.ViewModels
             set=>this.RaiseAndSetIfChanged(ref _userName,value);
         }
 
+        private ObservableAsPropertyHelper<string> _userNameError;
+
+        public string UserNameError => _userNameError?.Value ?? null;
+
+
         private string _password;
 
         public string Password
@@ -24,7 +29,9 @@ namespace BikeSharing.ViewModels
             set => this.RaiseAndSetIfChanged(ref _password, value);
         }
 
+        private ObservableAsPropertyHelper<string> _passwordError;
 
+        public string PasswordError => _passwordError?.Value ?? null;
 
         public LoginViewModel(IScreen hostScreen):base(hostScreen)
         {
