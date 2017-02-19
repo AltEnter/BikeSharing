@@ -101,7 +101,8 @@
                                 WinPhone="Center" />
                 </StackLayout.HorizontalOptions>
 
-                <Entry Placeholder="用户名">
+                <Entry Placeholder="用户名"
+                       Text="{Binding UserName,Mode=TwoWay}">
                     <Entry.Style>
                         <OnPlatform x:TypeArguments="Style"
                                     iOS="{StaticResource EntryStyle}"
@@ -135,15 +136,15 @@
                                 Android="0"
                                 WinPhone="0,140,0,0" />
                 </StackLayout.Margin>
-                
+
                 <Label Text="还没有账户？"
                        VerticalOptions="Center"
                        Style="{StaticResource HaveAccountLabelStyle}" />
-                
+
                 <Grid HeightRequest="40">
                     <Label Text="注册"
                            VerticalOptions="Center"
-                            Style="{StaticResource SignUpLabelStyle}"/>
+                           Style="{StaticResource SignUpLabelStyle}" />
                 </Grid>
             </StackLayout>
 
