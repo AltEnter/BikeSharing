@@ -8,16 +8,13 @@ using Xamarin.Forms;
 
 namespace BikeSharing.Converters
 {
-    public class BirthDataConvert : IValueConverter
+    public class StringToBoolConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (!(value is DateTime))
-                throw new InvalidOperationException("目标必须是一个DateTime类型。");
-
-            var date = (DateTime)value;
-
-            return date.ToString("dd MMMM yyyy");
+            if (string.IsNullOrEmpty(value as string))
+                return false;
+            return true;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

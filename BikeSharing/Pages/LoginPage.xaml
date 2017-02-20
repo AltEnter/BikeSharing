@@ -111,8 +111,8 @@
                     </Entry.Style>
                     <Entry.Triggers>
                         <DataTrigger TargetType="Entry"
-                                     Binding="{Binding UserNameError}"
-                                     Value="520">
+                                     Binding="{Binding UserNameError,Converter={StaticResource StringToBoolConverter}}"
+                                     Value="True">
                             <Setter Property="effects:LineColorEffect.LineColor"
                                     Value="{StaticResource ErrorColor}" />
                         </DataTrigger>

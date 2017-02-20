@@ -92,8 +92,9 @@
                         WinPhone="48" />
 
             <!--转换器-->
-            <converters:BirthDataConvert x:Key="BirthDateConverter" />
+            <converters:BirthDataConverter x:Key="BirthDateConverter" />
             <converters:BoolToColorConverter x:Key="BoolToColorConverter" />
+            <converters:StringToBoolConverter x:Key="StringToBoolConverter" />
 
             <!--样式-->
 
