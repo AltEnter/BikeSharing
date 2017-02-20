@@ -43,7 +43,8 @@ namespace BikeSharing.ViewModels
 
         private string Validate(string userName)
         {
-            return null;
+            
+            return userName;
         }
     }
 }

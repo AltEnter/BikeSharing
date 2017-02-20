@@ -102,7 +102,8 @@
                                 WinPhone="Center" />
                 </StackLayout.HorizontalOptions>
 
-                <Entry x:Name="UserName" Placeholder="用户名">
+                <Entry Text="{Binding UserName,Mode=TwoWay}"
+                       Placeholder="用户名">
                     <Entry.Style>
                         <OnPlatform x:TypeArguments="Style"
                                     iOS="{StaticResource EntryStyle}"
@@ -111,14 +112,15 @@
                     <Entry.Triggers>
                         <DataTrigger TargetType="Entry"
                                      Binding="{Binding UserNameError}"
-                                     Value="null">
+                                     Value="520">
                             <Setter Property="effects:LineColorEffect.LineColor"
                                     Value="{StaticResource ErrorColor}" />
                         </DataTrigger>
                     </Entry.Triggers>
                 </Entry>
 
-                <Entry Placeholder="密码"
+                <Entry Text="{Binding Password,Mode=TwoWay}"
+                       Placeholder="密码"
                        IsPassword="True">
                     <Entry.Style>
                         <OnPlatform x:TypeArguments="Style"

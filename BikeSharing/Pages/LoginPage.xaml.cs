@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 using BikeSharing.ViewModels;
 using ReactiveUI.XamForms;
 using Xamarin.Forms;
+using ReactiveUI;
+using System.Reactive.Disposables;
+using System.Reactive.Linq;
+using BikeSharing.Effects;
 
 namespace BikeSharing.Pages
 {
@@ -14,6 +18,18 @@ namespace BikeSharing.Pages
         public LoginPage()
         {
             InitializeComponent();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            this.WhenActivated(disposables =>
+            {
+                this.WhenAnyValue(v => v.ViewModel)
+                        .Subscribe(vm => BindingContext = vm)
+                        .DisposeWith(disposables);
+            });
         }
     }
 }
