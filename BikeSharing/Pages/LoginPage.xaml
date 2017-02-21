@@ -127,14 +127,34 @@
                                     iOS="{StaticResource EntryStyle}"
                                     Android="{StaticResource EntryStyle}" />
                     </Entry.Style>
+                    <Entry.Triggers>
+                        <DataTrigger TargetType="Entry"
+                                     Binding="{Binding PasswordError,Converter={StaticResource StringToBoolConverter}}"
+                                     Value="True">
+                            <Setter Property="effects:LineColorEffect.LineColor"
+                                    Value="{StaticResource ErrorColor}" />
+                        </DataTrigger>
+                    </Entry.Triggers>
                 </Entry>
 
                 <Label Text="忘记密码？"
                        HorizontalOptions="End"
-                       Style="{StaticResource ForgotPasswordLabelStyle}" />
+                       Style="{StaticResource ForgotPasswordLabelStyle}">
+                    <Label.Effects>
+                        <effects:UnderLineTextEffect />
+                    </Label.Effects>
+                </Label>
 
                 <Button Text="登陆"
-                        Style="{StaticResource SignInButtonStyle}" />
+                        Command="{Binding Login}"
+                        Style="{StaticResource SignInButtonStyle}">
+                    <Button.IsVisible>
+                        <OnPlatform x:TypeArguments="x:Boolean"
+                                    Android="True"
+                                    iOS="True"
+                                    WinPhone="False" />
+                    </Button.IsVisible>
+                </Button>
             </StackLayout>
 
             <StackLayout Grid.Row="1"
