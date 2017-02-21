@@ -33,17 +33,20 @@ namespace BikeSharing.ViewModels
 
         public string PasswordError => _passwordError?.Value ?? null;
 
+        public ReactiveCommand Login { get; private set; }
+
         public LoginViewModel(IScreen hostScreen) : base(hostScreen)
         {
             this.WhenAnyValue(x => x.UserName, selector: userName => Validate(userName))
                 .ToProperty(this, x => x.UserNameError, out _userNameError);
             this.WhenAnyValue(x => x.Password, selector: password => Validate(password))
                 .ToProperty(this, x =>x.PasswordError, out _passwordError);
+
+            
         }
 
         private string Validate(string userName)
         {
-            
             return userName;
         }
     }
