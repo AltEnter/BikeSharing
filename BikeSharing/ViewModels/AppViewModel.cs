@@ -2,6 +2,7 @@
 using BikeSharing.Pages;
 using BikeSharing.Services;
 using BikeSharing.Services.Interfaces;
+using BikeSharing.Validators;
 using ReactiveUI;
 using ReactiveUI.XamForms;
 using Splat;
@@ -22,12 +23,17 @@ namespace BikeSharing.ViewModels
 
             dependencyResolver.RegisterConstant(this, typeof(IScreen));
 
-            //RegisterProviders(dependencyResolver);
             RegisterServices(dependencyResolver);
             RegisterNavigablePages(dependencyResolver);
+            RegisterValidators(dependencyResolver);
 
             _authenticationService = dependencyResolver.GetService<IAuthenticationService>();
             InitNavigation();
+        }
+
+        private void RegisterValidators(IMutableDependencyResolver dependencyResolver)
+        {
+            dependencyResolver.RegisterLazySingleton(() => new LoginValidator(), typeof(LoginViewModel));
         }
 
         private void RegisterNavigablePages(IMutableDependencyResolver dependencyResolver)

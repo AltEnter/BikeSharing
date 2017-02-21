@@ -4,12 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using BikeSharing.InputModels;
 using ReactiveUI;
 
 namespace BikeSharing.ViewModels
 {
     public class LoginViewModel : ViewModel
     {
+        private LoginInputModel _loginInputModel;
+
+        public LoginInputModel LoginInputModel
+        {
+            get => _loginInputModel;
+            set => this.RaiseAndSetIfChanged(ref _loginInputModel, value);
+        }
+
+
         private string _userName;
         public string UserName
         {
