@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BikeSharing.ViewModels
 {
-    public class ViewModel : ReactiveObject, IRoutableViewModel
+    public abstract class ViewModel : ReactiveObject, IRoutableViewModel
     {
         public string UrlPathSegment { get; protected set; }
 

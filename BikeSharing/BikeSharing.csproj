@@ -47,6 +47,7 @@
     <Compile Include="Effects\MaxLinesEffect.cs" />
     <Compile Include="Effects\UnderLineTextEffect.cs" />
     <Compile Include="Helpers\Settings.cs" />
+    <Compile Include="InputModels\InputModel.cs" />
     <Compile Include="InputModels\LoginInputModel.cs" />
     <Compile Include="Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
@@ -128,7 +129,9 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\MainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>

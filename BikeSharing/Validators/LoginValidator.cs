@@ -12,7 +12,8 @@ namespace BikeSharing.Validators
     {
         public LoginValidator()
         {
-           
+            RuleFor(x => x.UserName).NotEmpty().WithMessage("用户名不能为空");
+            RuleFor(x => x.Password).NotEmpty().WithMessage("密码不能为空");
         }
     }
 }

@@ -102,7 +102,7 @@
                                 WinPhone="Center" />
                 </StackLayout.HorizontalOptions>
 
-                <Entry Text="{Binding UserName,Mode=TwoWay}"
+                <Entry Text="{Binding LoginInputModel.UserName,Mode=TwoWay}"
                        Placeholder="用户名">
                     <Entry.Style>
                         <OnPlatform x:TypeArguments="Style"
@@ -111,7 +111,7 @@
                     </Entry.Style>
                     <Entry.Triggers>
                         <DataTrigger TargetType="Entry"
-                                     Binding="{Binding UserNameError,Converter={StaticResource StringToBoolConverter}}"
+                                     Binding="{Binding LoginInputModel.Errors[UserName],Converter={StaticResource StringToBoolConverter}}"
                                      Value="True">
                             <Setter Property="effects:LineColorEffect.LineColor"
                                     Value="{StaticResource ErrorColor}" />
@@ -119,7 +119,7 @@
                     </Entry.Triggers>
                 </Entry>
 
-                <Entry Text="{Binding Password,Mode=TwoWay}"
+                <Entry Text="{Binding LoginInputModel.Password,Mode=TwoWay}"
                        Placeholder="密码"
                        IsPassword="True">
                     <Entry.Style>

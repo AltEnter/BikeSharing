@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using BikeSharing.InputModels;
+﻿using BikeSharing.InputModels;
+using BikeSharing.Services.Interfaces;
 using ReactiveUI;
+using Splat;
 
 namespace BikeSharing.ViewModels
 {
     public class LoginViewModel : ViewModel
     {
+        private IAuthenticationService _authenticationService;
+
         private LoginInputModel _loginInputModel;
 
         public LoginInputModel LoginInputModel
@@ -18,7 +16,6 @@ namespace BikeSharing.ViewModels
             get => _loginInputModel;
             set => this.RaiseAndSetIfChanged(ref _loginInputModel, value);
         }
-
 
         private string _userName;
         public string UserName
@@ -45,14 +42,14 @@ namespace BikeSharing.ViewModels
 
         public ReactiveCommand Login { get; private set; }
 
-        public LoginViewModel(IScreen hostScreen) : base(hostScreen)
+        public LoginViewModel(IScreen hostScreen,IAuthenticationService authenticationService=null) : base(hostScreen)
         {
+            _authenticationService = Locator.Current.GetService<IAuthenticationService>();
+
             this.WhenAnyValue(x => x.UserName, selector: userName => Validate(userName))
                 .ToProperty(this, x => x.UserNameError, out _userNameError);
             this.WhenAnyValue(x => x.Password, selector: password => Validate(password))
                 .ToProperty(this, x =>x.PasswordError, out _passwordError);
-
-            
         }
 
         private string Validate(string userName)
