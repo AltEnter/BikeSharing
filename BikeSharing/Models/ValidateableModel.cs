@@ -9,7 +9,7 @@ using Splat;
 
 namespace BikeSharing.Models
 {
-    public abstract class ValidateableModel
+    public abstract class ValidateableModel:ReactiveObject
     {
         private readonly AbstractValidator<ValidateableModel> _validator;
 

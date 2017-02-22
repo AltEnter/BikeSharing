@@ -1,4 +1,6 @@
-﻿using BikeSharing.Models;
+﻿using System.Collections.Generic;
+using System.Reactive.Linq;
+using BikeSharing.Models;
 using BikeSharing.Services.Interfaces;
 using ReactiveUI;
 using Splat;
@@ -9,52 +11,19 @@ namespace BikeSharing.ViewModels
     {
         private IAuthenticationService _authenticationService;
 
-        private User _loginInputModel;
+        private User _user;
 
-        public User LoginInputModel
+        public User User
         {
-            get => _loginInputModel;
-            set => this.RaiseAndSetIfChanged(ref _loginInputModel, value);
+            get => _user;
+            set => this.RaiseAndSetIfChanged(ref _user, value);
         }
-
-        private string _userName;
-        public string UserName
-        {
-            get => _userName;
-            set => this.RaiseAndSetIfChanged(ref _userName, value);
-        }
-
-        private ObservableAsPropertyHelper<string> _userNameError;
-
-        public string UserNameError => _userNameError?.Value ?? null;
-
-        private string _password;
-
-        public string Password
-        {
-            get => _password;
-            set => this.RaiseAndSetIfChanged(ref _password, value);
-        }
-
-        private ObservableAsPropertyHelper<string> _passwordError;
-
-        public string PasswordError => _passwordError?.Value ?? null;
 
         public ReactiveCommand Login { get; private set; }
 
-        public LoginViewModel(IScreen hostScreen,IAuthenticationService authenticationService=null) : base(hostScreen)
+        public LoginViewModel(IScreen hostScreen, IAuthenticationService authenticationService = null) : base(hostScreen)
         {
             _authenticationService = Locator.Current.GetService<IAuthenticationService>();
-
-            this.WhenAnyValue(x => x.UserName, selector: userName => Validate(userName))
-                .ToProperty(this, x => x.UserNameError, out _userNameError);
-            this.WhenAnyValue(x => x.Password, selector: password => Validate(password))
-                .ToProperty(this, x =>x.PasswordError, out _passwordError);
-        }
-
-        private string Validate(string userName)
-        {
-            return userName;
         }
     }
 }

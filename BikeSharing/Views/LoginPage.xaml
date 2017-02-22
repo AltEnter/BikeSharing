@@ -102,7 +102,8 @@
                                 WinPhone="Center" />
                 </StackLayout.HorizontalOptions>
 
-                <Entry Text="{Binding LoginInputModel.UserName,Mode=TwoWay}"
+                <Entry BindingContext="{Binding User}"
+                       Text="{Binding User.UserName,Mode=TwoWay,UpdateSourceEventName=PropertyChanged}"
                        Placeholder="用户名">
                     <Entry.Style>
                         <OnPlatform x:TypeArguments="Style"
@@ -111,7 +112,7 @@
                     </Entry.Style>
                     <Entry.Triggers>
                         <DataTrigger TargetType="Entry"
-                                     Binding="{Binding LoginInputModel.Errors[UserName],Converter={StaticResource StringToBoolConverter}}"
+                                     Binding="{Binding User.Errors[UserName],Converter={StaticResource StringToBoolConverter}}"
                                      Value="True">
                             <Setter Property="effects:LineColorEffect.LineColor"
                                     Value="{StaticResource ErrorColor}" />
@@ -119,7 +120,7 @@
                     </Entry.Triggers>
                 </Entry>
 
-                <Entry Text="{Binding LoginInputModel.Password,Mode=TwoWay}"
+                <Entry Text="{Binding User.Password,Mode=TwoWay}"
                        Placeholder="密码"
                        IsPassword="True">
                     <Entry.Style>
@@ -129,7 +130,7 @@
                     </Entry.Style>
                     <Entry.Triggers>
                         <DataTrigger TargetType="Entry"
-                                     Binding="{Binding PasswordError,Converter={StaticResource StringToBoolConverter}}"
+                                     Binding="{Binding Errors[Password],Converter={StaticResource StringToBoolConverter}}"
                                      Value="True">
                             <Setter Property="effects:LineColorEffect.LineColor"
                                     Value="{StaticResource ErrorColor}" />
