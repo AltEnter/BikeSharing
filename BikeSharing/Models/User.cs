@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BikeSharing.InputModels
+namespace BikeSharing.Models
 {
-    public class LoginInputModel
+    public class User:ValidateableModel
     {
         public string UserName { get; set; }
         public string Password { get; set; }

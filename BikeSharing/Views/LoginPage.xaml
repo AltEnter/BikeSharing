@@ -4,7 +4,7 @@
                           xmlns:rxui="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
                           xmlns:vms="clr-namespace:BikeSharing.ViewModels"
                           xmlns:effects="clr-namespace:BikeSharing.Effects"
-                          x:Class="BikeSharing.Pages.LoginPage"
+                          x:Class="BikeSharing.Views.LoginPage"
                           x:TypeArguments="vms:LoginViewModel">
     <rxui:ReactiveContentPage.Resources>
         <ResourceDictionary>

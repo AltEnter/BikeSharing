@@ -11,7 +11,7 @@ using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using BikeSharing.Effects;
 
-namespace BikeSharing.Pages
+namespace BikeSharing.Views
 {
     public partial class LoginPage : ReactiveContentPage<LoginViewModel>
     {

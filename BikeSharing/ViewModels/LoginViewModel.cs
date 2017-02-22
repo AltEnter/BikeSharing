@@ -1,4 +1,4 @@
-﻿using BikeSharing.InputModels;
+﻿using BikeSharing.Models;
 using BikeSharing.Services.Interfaces;
 using ReactiveUI;
 using Splat;
@@ -9,9 +9,9 @@ namespace BikeSharing.ViewModels
     {
         private IAuthenticationService _authenticationService;
 
-        private LoginInputModel _loginInputModel;
+        private User _loginInputModel;
 
-        public LoginInputModel LoginInputModel
+        public User LoginInputModel
         {
             get => _loginInputModel;
             set => this.RaiseAndSetIfChanged(ref _loginInputModel, value);

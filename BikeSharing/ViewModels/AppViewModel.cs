@@ -1,5 +1,5 @@
 ﻿using System;
-using BikeSharing.Pages;
+using BikeSharing.Views;
 using BikeSharing.Services;
 using BikeSharing.Services.Interfaces;
 using BikeSharing.Validators;
@@ -7,6 +7,7 @@ using ReactiveUI;
 using ReactiveUI.XamForms;
 using Splat;
 using Xamarin.Forms;
+using BikeSharing.Models;
 
 namespace BikeSharing.ViewModels
 {
@@ -33,7 +34,7 @@ namespace BikeSharing.ViewModels
 
         private void RegisterValidators(IMutableDependencyResolver dependencyResolver)
         {
-            dependencyResolver.RegisterLazySingleton(() => new LoginValidator(), typeof(LoginViewModel));
+            dependencyResolver.RegisterLazySingleton(() => new UserValidator(), typeof(User));
         }
 
         private void RegisterNavigablePages(IMutableDependencyResolver dependencyResolver)

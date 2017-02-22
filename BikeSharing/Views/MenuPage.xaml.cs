@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
-namespace BikeSharing.Pages
+namespace BikeSharing.Views
 {
     public partial class MenuPage : ContentPage
     {

@@ -7,20 +7,20 @@ using FluentValidation;
 using ReactiveUI;
 using Splat;
 
-namespace BikeSharing.InputModels
+namespace BikeSharing.Models
 {
-    public abstract class InputModel
+    public abstract class ValidateableModel
     {
-        private readonly AbstractValidator<InputModel> _validator;
+        private readonly AbstractValidator<ValidateableModel> _validator;
 
         public bool IsValid => _validator.Validate(this).IsValid;
 
         public IDictionary<string, string> Errors => 
             _validator.Validate(this).Errors.ToDictionary(x => x.PropertyName, x => x.ErrorMessage);
 
-        public InputModel()
+        public ValidateableModel()
         {
-            _validator = Locator.Current.GetService(GetType()) as AbstractValidator<InputModel>;
+            _validator = Locator.Current.GetService(GetType()) as AbstractValidator<ValidateableModel>;
         }
     }
 }

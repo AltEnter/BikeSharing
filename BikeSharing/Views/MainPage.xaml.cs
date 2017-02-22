@@ -1,7 +1,7 @@
 ﻿using BikeSharing.ViewModels;
 using ReactiveUI.XamForms;
 
-namespace BikeSharing.Pages
+namespace BikeSharing.Views
 {
     public partial class MainPage : ReactiveMasterDetailPage<MainViewModel>
     {
