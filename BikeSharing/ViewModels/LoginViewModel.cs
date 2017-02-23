@@ -20,8 +20,8 @@ namespace BikeSharing.ViewModels
         {
             User = new User
             {
-                UserName="12",
-                Password="ha"
+                UserName="test",
+                Password="test"
             };
             _authenticationService = Locator.Current.GetService<IAuthenticationService>();
         }

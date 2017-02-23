@@ -5,8 +5,7 @@
                           xmlns:vms="clr-namespace:BikeSharing.ViewModels"
                           xmlns:effects="clr-namespace:BikeSharing.Effects"
                           x:Class="BikeSharing.Views.LoginPage"
-                          x:TypeArguments="vms:LoginViewModel"
-                           >
+                          x:TypeArguments="vms:LoginViewModel">
     <rxui:ReactiveContentPage.Resources>
         <ResourceDictionary>
 
@@ -103,8 +102,7 @@
                                 WinPhone="Center" />
                 </StackLayout.HorizontalOptions>
 
-                <Entry
-                       Text="{Binding User.UserName,Mode=TwoWay,UpdateSourceEventName=PropertyChanged}"
+                <Entry Text="{Binding User.UserName,Mode=TwoWay}"
                        Placeholder="用户名">
                     <Entry.Style>
                         <OnPlatform x:TypeArguments="Style"
