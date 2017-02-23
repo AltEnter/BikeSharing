@@ -18,7 +18,11 @@ namespace BikeSharing.ViewModels
 
         public LoginViewModel(IScreen hostScreen, IAuthenticationService authenticationService = null) : base(hostScreen)
         {
-            User = new User();
+            User = new User
+            {
+                UserName="12",
+                Password="ha"
+            };
             _authenticationService = Locator.Current.GetService<IAuthenticationService>();
         }
     }
